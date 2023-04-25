@@ -2,7 +2,7 @@ import requests as re
 from datetime import date
 from bs4 import BeautifulSoup
 from time import sleep
-import alive_progress as ap
+#import alive_progress as ap
 
 years = str(date.today())[0:4]
 base_url = "https://www.formula1.com/"
@@ -10,9 +10,9 @@ calendar_url = f"https://www.formula1.com/en/racing/{years}.html"
 standing_drivers=f"https://www.formula1.com/en/results.html/{years}/drivers.html"
 standing_teams = f"https://www.formula1.com/en/results.html/{years}/team.html"
 # seperating the html code of the base url to title and pictures
-with open("Landing page/Card 1/list 1 .txt","w") as c1:
-    with open("Landing page/Card 2/list 2.txt","w") as c2:
-        with open("Landing page/Card 3/list 3.txt","w") as c3:
+with open("F1/Landing page/Card 1/list 1 .txt","w") as c1:
+    with open("F1/Landing page/Card 2/list 2.txt","w") as c2:
+        with open("F1/Landing page/Card 3/list 3.txt","w") as c3:
             Card_1_list = []
             Card_2_list = []
             Card_3_list = []
@@ -61,7 +61,7 @@ c3.close()
 c2.close()
 c1.close()
 # complcations in scapring hero event completion at last
-with open("Race Calender/Races.txt","w") as R_C:
+with open("F1/Race Calender/Races.txt","w") as R_C:
     month_list = ['Jan','Feb','Mar','Apr']
     page2 = re.get(calendar_url)
     soup = BeautifulSoup(page2.content,'html5lib')
@@ -71,7 +71,7 @@ with open("Race Calender/Races.txt","w") as R_C:
     #upcoming_gp_card = upcoming_gp.find(class_ = 'race-card col-12 upcoming')
     print(upcoming_gp_events)
 R_C.close()
-with open("Standings/drivers.txt","w") as drivers_standings:
+with open("F1/Standings/drivers.txt","w") as drivers_standings:
     page = re.get(standing_drivers)
     soup = BeautifulSoup(page.content,'html5lib')
     table = soup.find(class_ = 'table-wrap')
@@ -93,7 +93,7 @@ with open("Standings/drivers.txt","w") as drivers_standings:
     for line in table_list:
         drivers_standings.write(f"{line}\n")
 drivers_standings.close()
-with open('Standings/team.txt','w') as team:
+with open('F1/Standings/team.txt','w') as team:
     page = re.get(standing_teams)
     soup = BeautifulSoup(page.content,'html5lib')
 
