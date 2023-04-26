@@ -1,6 +1,7 @@
 import requests as re
 from datetime import date
 from bs4 import BeautifulSoup
+import json
 from time import sleep
 #import alive_progress as ap
 
@@ -95,24 +96,50 @@ with open("Race Calender/Races.txt","w") as R_C:
 
     race_cards = soup.find_all('div',class_ ="col-12 col-sm-6 col-lg-4 col-xl-3")
     round_complete = False
+    hero_race_script = str(soup.find_all('script')[0])
+    hero_race_json = hero_race_script[35:len(hero_race_script)-10]
+    json_data = json.loads(hero_race_json)
+    hero_race_name = json_data["name"]
+    hero_race_link = json_data["@id"]
     for card in race_cards:
+        Upcoming = False
+        schedule_list = []
         round = card.find(class_ = 'card-title f1-uppercase f1-color--warmRed').text
+
         date = [card.find(class_ = 'start-date').text,card.find(class_ = 'end-date').text]
+
         month = card.find(class_ = 'month-wrapper').text
+
         event_details = card.find(class_ = 'event-details')
-        event_location = event_details.find(class_ = 'event-place').text
+
+        event_location = (event_details.find(class_ = 'event-place').text)[0:-1]
         event_title = event_details.find(class_ = 'event-title f1--xxs').text
-        event_pic = event_details.find_all('img',class_ = "lazy")
+
+        event_pic = event_details.find_all('img', class_="lazy")
         pic_list = [pic['data-src'] for pic in event_pic]
-        pic_list.append(card.find(class_ = 'lazy')['data-src'])
-    ## data for all cards recived but unable to get the race timings for the 'hero' race -> upcoming race ##
+        pic_list.append(card.find(class_='lazy')['data-src'])
+
+        # opening the upcoming races page to obtain all the race events
+        if event_title == hero_race_name:
+            Upcoming = True
+            hero_page = re.get(hero_race_link)
+            soup_hero = BeautifulSoup(hero_page.content,'html5lib')
+            scripts = ((str(soup_hero.find_all('script')[0]))[35::])[0:-10]
+            cards = json.loads(scripts)['subEvent']
+            for card in cards:
+                title = card['name'][0:-24]
+                time_date = [card['startDate'],card['endDate']]
+            # data for each event has been scraped ,, time conversion remaining
+
+    ## Hero race identified => next find the timings for each event in the hero race ##
+
 
 R_C.close()
 
 
 with open("Standings/drivers.txt","w") as drivers_standings:
-    page = re.get(standing_drivers)
-    soup = BeautifulSoup(page.content,'html5lib')
+    page3 = re.get(standing_drivers)
+    soup = BeautifulSoup(page3.content,'html5lib')
 
     table = soup.find(class_ = 'table-wrap')
 
@@ -142,8 +169,8 @@ drivers_standings.close()
 
 
 with open('Standings/team.txt','w') as team:
-    page = re.get(standing_teams)
-    soup = BeautifulSoup(page.content,'html5lib')
+    page4 = re.get(standing_teams)
+    soup = BeautifulSoup(page4.content,'html5lib')
 
     points = soup.find_all('td', class_='dark')
     point_list = [points[i].text for i in range(1, len(points), 2)]
