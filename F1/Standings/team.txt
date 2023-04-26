@@ -1,0 +1,10 @@
+Red Bull Racing Honda RBPT,123
+Aston Martin Aramco Mercedes,65
+Mercedes,56
+Ferrari,26
+McLaren Mercedes,12
+Alpine Renault,8
+Haas Ferrari,7
+Alfa Romeo Ferrari,6
+AlphaTauri Honda RBPT,1
+Williams Mercedes,1

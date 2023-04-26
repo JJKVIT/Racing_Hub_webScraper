@@ -10,9 +10,9 @@ calendar_url = f"https://www.formula1.com/en/racing/{years}.html"
 standing_drivers=f"https://www.formula1.com/en/results.html/{years}/drivers.html"
 standing_teams = f"https://www.formula1.com/en/results.html/{years}/team.html"
 # seperating the html code of the base url to title and pictures
-with open("F1/Landing page/Card 1/list 1 .txt","w") as c1:
-    with open("F1/Landing page/Card 2/list 2.txt","w") as c2:
-        with open("F1/Landing page/Card 3/list 3.txt","w") as c3:
+with open("Landing page/Card 1/list 1 .txt","w") as c1:
+    with open("Landing page/Card 2/list 2.txt","w") as c2:
+        with open("Landing page/Card 3/list 3.txt","w") as c3:
             Card_1_list = []
             Card_2_list = []
             Card_3_list = []
@@ -61,7 +61,7 @@ c3.close()
 c2.close()
 c1.close()
 # complcations in scapring hero event completion at last
-with open("F1/Race Calender/Races.txt","w") as R_C:
+with open("Race Calender/Races.txt","w") as R_C:
     month_list = ['Jan','Feb','Mar','Apr']
     page2 = re.get(calendar_url)
     soup = BeautifulSoup(page2.content,'html5lib')
@@ -69,9 +69,9 @@ with open("F1/Race Calender/Races.txt","w") as R_C:
     upcoming_gp_events = soup.find(class_ = 'session-name f1--xxs')
     rest_calendar = soup.find_all(class_ = 'col-12 col-sm-6 col-lg-4 col-xl-3')
     #upcoming_gp_card = upcoming_gp.find(class_ = 'race-card col-12 upcoming')
-    print(upcoming_gp_events)
+    #print(upcoming_gp_events)
 R_C.close()
-with open("F1/Standings/drivers.txt","w") as drivers_standings:
+with open("Standings/drivers.txt","w") as drivers_standings:
     page = re.get(standing_drivers)
     soup = BeautifulSoup(page.content,'html5lib')
     table = soup.find(class_ = 'table-wrap')
@@ -93,9 +93,16 @@ with open("F1/Standings/drivers.txt","w") as drivers_standings:
     for line in table_list:
         drivers_standings.write(f"{line}\n")
 drivers_standings.close()
-with open('F1/Standings/team.txt','w') as team:
+with open('Standings/team.txt','w') as team:
     page = re.get(standing_teams)
     soup = BeautifulSoup(page.content,'html5lib')
+    points = soup.find_all('td', class_='dark')
+    point_list = [points[i].text for i in range(1, len(points), 2)]
+    team_name = soup.find_all('a',class_="dark bold uppercase ArchiveLink")
+    team_name_list = [team.text for team in team_name]
+    team_point_pairing = list(zip(team_name_list,point_list))
+    for pair in team_point_pairing:
+        team.write(f"{pair[0]},{pair[1]}\n")
 
 
 team.close()
