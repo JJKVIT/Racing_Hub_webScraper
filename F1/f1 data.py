@@ -70,7 +70,7 @@ with open("Landing page/Card 1/list 1.txt","w") as c1:
                 try:
                     pic = article.find(class_ = 'lazy')['data-src']
                 except:
-                    pic = article.find(class_ = 'lazy')
+                    pic = None 
                 c2.write(f"{title}, {pic}\n")
             #########END OF CARD 2 PICTURES AND TITLES################
 
