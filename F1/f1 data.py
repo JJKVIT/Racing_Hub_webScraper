@@ -1,11 +1,20 @@
+import datetime
 import requests as re
 from datetime import date
 from bs4 import BeautifulSoup
 import json
-from time import sleep
+import pytz
+from urllib.request import urlopen
+import time
 #import alive_progress as ap
 
 years = str(date.today())[0:4]
+
+lon_lat_url = 'http://ipinfo.io/json'
+data = str(json.load(urlopen(lon_lat_url))['loc'])
+request_data = data.split(",")
+response = re.get(f"https://timeapi.io/api/Time/current/coordinate?latitude={request_data[0]}&longitude={request_data[1]}")
+user_timezone = response.json()['timeZone']
 
 base_url = "https://www.formula1.com/"
 
@@ -102,8 +111,6 @@ with open("Race Calender/Races.txt","w") as R_C:
     hero_race_name = json_data["name"]
     hero_race_link = json_data["@id"]
     for card in race_cards:
-        Upcoming = False
-        schedule_list = []
         round = card.find(class_ = 'card-title f1-uppercase f1-color--warmRed').text
 
         date = [card.find(class_ = 'start-date').text,card.find(class_ = 'end-date').text]
@@ -113,7 +120,7 @@ with open("Race Calender/Races.txt","w") as R_C:
         event_details = card.find(class_ = 'event-details')
 
         event_location = (event_details.find(class_ = 'event-place').text)[0:-1]
-        event_title = event_details.find(class_ = 'event-title f1--xxs').text
+        event_title = (event_details.find(class_ = 'event-title f1--xxs').text).rstrip(' ')
 
         event_pic = event_details.find_all('img', class_="lazy")
         pic_list = [pic['data-src'] for pic in event_pic]
@@ -121,14 +128,29 @@ with open("Race Calender/Races.txt","w") as R_C:
 
         # opening the upcoming races page to obtain all the race events
         if event_title == hero_race_name:
-            Upcoming = True
             hero_page = re.get(hero_race_link)
             soup_hero = BeautifulSoup(hero_page.content,'html5lib')
             scripts = ((str(soup_hero.find_all('script')[0]))[35::])[0:-10]
             cards = json.loads(scripts)['subEvent']
+            sub_title_list = []
             for card in cards:
                 title = card['name'][0:-24]
                 time_date = [card['startDate'],card['endDate']]
+                for time in time_date:
+                    time_str = (str(time).replace("T"," ")).replace("Z","")
+                    datetime_object = datetime.datetime.strptime(time_str, '%Y-%m-%d %H:%M:%S')
+                    current_timezone = pytz.timezone('Zulu')
+                    target_timezone = pytz.timezone(f"{user_timezone}")
+                    localized_time = current_timezone.localize(datetime_object)
+                    datetime_user = localized_time.astimezone(target_timezone)
+                    time_date[time_date.index(time)] = str(datetime_user.replace(tzinfo=None))
+
+                sub_title_list.append([title,time_date])
+
+            R_C.write(f"Upcoming,{round},{date},{month},{event_location},{event_title},{sub_title_list},{pic_list}\n")
+
+        R_C.write(f"{round},{date},{month},{event_location},{event_title},{pic_list}\n")
+
             # data for each event has been scraped ,, time conversion remaining
 
     ## Hero race identified => next find the timings for each event in the hero race ##
