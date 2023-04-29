@@ -18,8 +18,8 @@ user_timezone = response.json()['timeZone']
 
 def indy_news():
     # include IndyCar/ after completion to the file path
-    with open("IndyCar/News/news.txt","w") as nw:
-        news_url = 'https://www.indycar.com/News'
+    with open("IndyNXT/News/news.txt","w") as nw:
+        news_url = 'https://www.indycar.com/INDYNXT/News'
         page_news = re.get(news_url)
         soup = BeautifulSoup(page_news.content,'html5lib')
         news_card = soup.find_all('li', class_ = 'media-grid-module__media-item')
@@ -31,8 +31,8 @@ def indy_news():
     nw.close()
 
 def indy_driver_standings():
-    with open("IndyCar/Standings/drivers.txt", "w") as dw:
-        drivers_url = 'https://www.indycar.com/Drivers'
+    with open("IndyNXT/Standings/drivers.txt", "w") as dw:
+        drivers_url = 'https://www.indycar.com/INDYNXT/Drivers'
         drivers_page = re.get(drivers_url)
         soup = BeautifulSoup(drivers_page.content, 'html5lib')
         driver_card = soup.find_all('div',class_ = 'driver-listing__driver-profile')
@@ -46,8 +46,8 @@ def indy_driver_standings():
     dw.close()
 
 def indy_calendar():
-    with open("IndyCar/Calendar/race_schedule.txt","w") as rs:
-        schedule_url = 'https://www.indycar.com/Schedule'
+    with open("IndyNXT/Calendar/race_schedule.txt","w") as rs:
+        schedule_url = 'https://www.indycar.com/INDYNXT/Schedule'
         schedule_page = re.get(schedule_url)
         soup = BeautifulSoup(schedule_page.content,'html5lib')
         race_card = soup.find_all('li',class_ = 'schedule-list__item')
@@ -90,7 +90,7 @@ def indy_calendar():
                 rs.write(f"{race_finished},{race_name},{time_date},{brodcasters}\n")
     rs.close()
 
-def run_Indy_multi():
+def run_NXT_multi():
     # attempting multithreading to increase speed
     t1 = threading.Thread(target=indy_news, name='t1')
     t2 = threading.Thread(target=indy_driver_standings, name='t2')
@@ -105,4 +105,3 @@ def run_Indy_multi():
     t1.join()
     t2.join()
     t3.join()
-
