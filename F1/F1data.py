@@ -205,6 +205,7 @@ def team_standings():
             team.write(f"{pair[0]},{pair[1]}\n")
     team.close()
 
+# function to run all the functions using multithreading
 def run_F1_multi():
     # attempting multithreading to increase speed
     t1 = threading.Thread(target=landingpage, name='t1')
