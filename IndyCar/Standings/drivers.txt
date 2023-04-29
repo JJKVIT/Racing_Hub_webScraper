@@ -1,0 +1,35 @@
+1,Marcus Ericsson,110,https://digbza2f4g9qo.cloudfront.net/-/media/IndyCar/Drivers/IndyCar-Series/Headshot/MarcusEricsson.jpg?h=301&iar=0&w=375&vs=1&d=20230225T183114Z,Chip Ganassi Racing
+2,Pato O'Ward,95,https://digbza2f4g9qo.cloudfront.net/-/media/IndyCar/Drivers/IndyCar-Series/Headshot/PatricioOWard.jpg?h=301&iar=0&w=375&vs=1&d=20230213T155816Z,Arrow McLaren
+3,Alex Palou,91,https://digbza2f4g9qo.cloudfront.net/-/media/IndyCar/Drivers/IndyCar-Series/Headshot/AlexPalou.jpg?h=301&iar=0&w=375&vs=1&d=20230225T180801Z,Chip Ganassi Racing
+4,Josef Newgarden,89,https://digbza2f4g9qo.cloudfront.net/-/media/IndyCar/Drivers/IndyCar-Series/Headshot/JosefNewgarden.jpg?h=301&iar=0&w=375&vs=1&d=20230213T155701Z,Team Penske
+5,Kyle Kirkwood,74,https://digbza2f4g9qo.cloudfront.net/-/media/IndyCar/Drivers/IndyCar-Series/Headshot/KyleKirkwood.jpg?h=301&iar=0&w=375&vs=1&d=20230225T181220Z,Andretti Autosport
+6,Scott Dixon,72,https://digbza2f4g9qo.cloudfront.net/-/media/IndyCar/Drivers/IndyCar-Series/Headshot/ScottDixon.jpg?h=301&iar=0&w=375&vs=1&d=20230225T183129Z,Chip Ganassi Racing
+7,Romain Grosjean,71,https://digbza2f4g9qo.cloudfront.net/-/media/IndyCar/Drivers/IndyCar-Series/Headshot/RomainGrosjean.jpg?h=301&iar=0&w=375&vs=1&d=20230213T212028Z,Andretti Autosport
+8,Colton Herta,69,https://digbza2f4g9qo.cloudfront.net/-/media/IndyCar/Drivers/IndyCar-Series/Headshot/ColtonHerta.jpg?h=301&iar=0&w=375&vs=1&d=20230225T181951Z,Andretti Autosport w/ Curb-Agajanian
+9,Will Power,68,https://digbza2f4g9qo.cloudfront.net/-/media/IndyCar/Drivers/IndyCar-Series/Headshot/WillPower.jpg?h=301&iar=0&w=375&vs=1&d=20230213T160038Z,Team Penske
+10,Scott McLaughlin,68,https://digbza2f4g9qo.cloudfront.net/-/media/IndyCar/Drivers/IndyCar-Series/Headshot/ScottMcLaughlin.jpg?h=301&iar=0&w=375&vs=1&d=20230213T155927Z,Team Penske
+11,David Malukas,63,https://digbza2f4g9qo.cloudfront.net/-/media/IndyCar/Drivers/IndyCar-Series/Headshot/DavidMalukas.jpg?h=301&iar=0&w=375&vs=1&d=20230213T155502Z,Dale Coyne Racing with HMD
+12,Callum Ilott,63,https://digbza2f4g9qo.cloudfront.net/-/media/IndyCar/Drivers/IndyCar-Series/Headshot/CallumIlott.jpg?h=301&iar=0&w=375&vs=1&d=20230213T155349Z,Juncos Hollinger Racing
+13,Graham Rahal,52,https://digbza2f4g9qo.cloudfront.net/-/media/IndyCar/Drivers/IndyCar-Series/Headshot/GrahamRahal.jpg?h=301&iar=0&w=375&vs=1&d=20230225T180249Z,Rahal Letterman Lanigan Racing
+14,Christian Lundgaard,49,https://digbza2f4g9qo.cloudfront.net/-/media/IndyCar/Drivers/IndyCar-Series/Headshot/ChristianLundgaard.jpg?h=301&iar=0&w=375&vs=1&d=20230213T155410Z,Rahal Letterman Lanigan Racing
+15,Alexander Rossi,48,https://digbza2f4g9qo.cloudfront.net/-/media/IndyCar/Drivers/IndyCar-Series/Headshot/AlexanderRossi.jpg?h=301&iar=0&w=375&vs=1&d=20230213T155301Z,Arrow McLaren
+16,Felix Rosenqvist,44,https://digbza2f4g9qo.cloudfront.net/-/media/IndyCar/Drivers/IndyCar-Series/Headshot/FelixRosenqvist.jpg?h=301&iar=0&w=375&vs=1&d=20230225T180002Z,Arrow McLaren
+17,Marcus Armstrong,43,https://digbza2f4g9qo.cloudfront.net/-/media/IndyCar/Drivers/IndyCar-Series/Headshot/MarcusArmstrong.jpg?h=301&iar=0&w=375&vs=1&d=20230213T155734Z,Chip Ganassi Racing
+18,Agustin Canapino,42,https://digbza2f4g9qo.cloudfront.net/-/media/IndyCar/Drivers/IndyCar-Series/Headshot/AgustinCanapino.jpg?h=301&iar=0&w=375&vs=1&d=20230225T183629Z,Juncos Hollinger Racing
+19,Jack Harvey,37,https://digbza2f4g9qo.cloudfront.net/-/media/IndyCar/Drivers/IndyCar-Series/Headshot/JackHarvey.jpg?h=301&iar=0&w=375&vs=1&d=20230225T183055Z,Rahal Letterman Lanigan Racing
+20,Helio Castroneves,36,https://digbza2f4g9qo.cloudfront.net/-/media/IndyCar/Drivers/IndyCar-Series/Headshot/HelioCastroneves.jpg?h=301&iar=0&w=375&vs=1&d=20230213T155629Z,Meyer Shank Racing
+21,Santino Ferrucci,34,https://digbza2f4g9qo.cloudfront.net/-/media/IndyCar/Drivers/IndyCar-Series/Headshot/SantinoFerrucci.jpg?h=301&iar=0&w=375&vs=1&d=20230225T183034Z,A.J. Foyt Enterprises
+22,Rinus VeeKay,33,https://digbza2f4g9qo.cloudfront.net/-/media/IndyCar/Drivers/IndyCar-Series/Headshot/RinusVeeKay.jpg?h=301&iar=0&w=375&vs=1&d=20230225T175755Z,Ed Carpenter Racing
+23,Conor Daly,33,https://digbza2f4g9qo.cloudfront.net/-/media/IndyCar/Drivers/IndyCar-Series/Headshot/ConorDaly.jpg?h=301&iar=0&w=375&vs=1&d=20230225T183616Z,Ed Carpenter Racing
+24,Simon Pagenaud,33,https://digbza2f4g9qo.cloudfront.net/-/media/IndyCar/Drivers/IndyCar-Series/Headshot/SimonPagenaud.jpg?h=301&iar=0&w=375&vs=1&d=20230225T180957Z,Meyer Shank Racing
+25,Sting Ray Robb,32,https://digbza2f4g9qo.cloudfront.net/-/media/IndyCar/Drivers/IndyCar-Series/Headshot/StingRayRobb.jpg?h=301&iar=0&w=375&vs=1&d=20230425T140148Z,Dale Coyne Racing with RWR
+26,Benjamin Pedersen,26,https://digbza2f4g9qo.cloudfront.net/-/media/IndyCar/Drivers/IndyCar-Series/Headshot/BenjaminPedersen.jpg?h=301&iar=0&w=375&vs=1&d=20230425T140121Z,A.J. Foyt Enterprises
+27,Devlin DeFrancesco,26,https://digbza2f4g9qo.cloudfront.net/-/media/IndyCar/Drivers/IndyCar-Series/Headshot/DevlinDeFrancesco.jpg?h=301&iar=0&w=375&vs=1&d=20230225T183150Z,Andretti Steinbrenner Autosport
+28,Ed Carpenter,17,https://digbza2f4g9qo.cloudfront.net/-/media/IndyCar/Drivers/IndyCar-Series/Headshot/EdCarpenter.jpg?h=301&iar=0&w=375&vs=1&d=20230213T184523Z,Ed Carpenter Racing
+29,Takuma Sato,5,https://digbza2f4g9qo.cloudfront.net/-/media/IndyCar/Drivers/IndyCar-Series/Headshot/TakumaSato.jpg?h=301&iar=0&w=375&vs=1&d=20230425T140139Z,Chip Ganassi Racing
+30,Marco Andretti,0,https://digbza2f4g9qo.cloudfront.net/-/media/IndyCar/Drivers/IndyCar-Series/Headshot/MarcoAndretti.jpg?h=301&iar=0&w=375&vs=1&d=20230425T140215Z,Andretti Herta w/ Marco & Curb-Agajanian
+31,RC Enerson,0,https://digbza2f4g9qo.cloudfront.net/-/media/IndyCar/Drivers/IndyCar-Series/Headshot/RCEnerson.jpg?h=301&iar=0&w=375&vs=1&d=20230421T204537Z,Abel Motorsports
+32,Ryan Hunter-Reay,0,https://digbza2f4g9qo.cloudfront.net/-/media/IndyCar/Drivers/IndyCar-Series/Headshot/RyanHunterReay.jpg?h=301&iar=0&w=375&vs=1&d=20230425T140735Z,Dreyer & Reinbold Racing
+33,Tony Kanaan,0,https://digbza2f4g9qo.cloudfront.net/-/media/IndyCar/Drivers/IndyCar-Series/Headshot/TonyKanaan.jpg?h=301&iar=0&w=375&vs=1&d=20230225T181928Z,Arrow McLaren
+34,Katherine Legge,0,https://digbza2f4g9qo.cloudfront.net/-/media/IndyCar/Drivers/IndyCar-Series/Headshot/KatherineLegge.jpg?h=301&iar=0&w=375&vs=1&d=20230425T140226Z,Rahal Letterman Lanigan Racing
+35,Stefan Wilson,0,https://digbza2f4g9qo.cloudfront.net/-/media/IndyCar/Drivers/IndyCar-Series/Headshot/StefanWilson.jpg?h=301&iar=0&w=375&vs=1&d=20230425T140158Z,Dreyer & Reinbold Racing
