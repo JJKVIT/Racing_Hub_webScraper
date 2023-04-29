@@ -146,7 +146,7 @@ def race_calendar():
 
                     sub_title_list.append([title,time_date])
 
-                R_C.write(f"Upcoming,{round},{date},{month},{event_location},{event_title},{sub_title_list},{pic_list}\n")
+                R_C.write(f"Upcoming,{round},{event_location},{event_title},{sub_title_list},{pic_list}\n")
                 continue
 
             R_C.write(f"{round},{date},{month},{event_location},{event_title},{pic_list}\n")
