@@ -1,0 +1,11 @@
+('Round 1', '03-05March', 'Sakhir')
+ ('Round 2', '31-02April', 'J. Martí')
+ ('Round 3', '19-21May', 'G. Bortoleto')
+ ('Round 4', '25-28May', 'Melbourne')
+ ('Round 5', '02-04June', "Z. O'Sullivan")
+ ('Round 6', '30-02July', 'G. Bortoleto')
+ ('Round 7', '07-09July', 'Imola')
+ ('Round 8', '21-23July', 'Monaco')
+ ('Round 9', '28-30July', 'Barcelona')
+ ('Round 10', '01-03September', 'Spielberg')
+ 
