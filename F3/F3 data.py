@@ -78,6 +78,7 @@ with open("F3\Standings\Team Standings.txt",'w') as f3team:
 
 f3team.close()
 
+# Race calendar race names issue that needs to be resolved
 with open("F3\Calendar\F3 Calendar.txt",'w') as f3calendar:
     calendar_url="https://www.fiaformula3.com/Calendar"
     calendar_content=requests.get(calendar_url)
@@ -106,25 +107,4 @@ with open("F3\Calendar\F3 Calendar.txt",'w') as f3calendar:
 
 f3calendar.close()
 
-results_url="https://www.fiaformula3.com/Results?raceid=1039"
-results_content=requests.get(results_url)
-soup=BeautifulSoup(results_content.content,"html5lib")
-
-basicinfo_class=soup.find_all("div",class_="circuit-col")
-basicinfo_list=[]
-for information in basicinfo_class:
-    basicinfo_list.append(information.text)
-    # basicinfo_list.append(' ')
-# print(basicinfo_list) #It works but everything is cramped up so need to find a way to add spaces
-
-finalresults_class=soup.find_all("div",class_="driver-name-wrapper")
-finalresults_list=[]
-for race_results in finalresults_class:
-    finalresults_list.append(race_results.text)
-
-race_time_class=soup.find_all("div",class_="score-wrapper")
-race_time_list=[]
-for timedrivers in race_time_class:
-    race_time_list.append(timedrivers.text)
-driver_overall=list(zip(finalresults_list,race_time_list))
-# print(driver_overall)
+### Decided race results no longer required

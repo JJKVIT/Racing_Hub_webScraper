@@ -7,7 +7,7 @@ from urllib.request import urlopen
 import threading
 import time
 
-def Fe_news():
+def FE_news():
     with open("FormulaE/News/news.txt",'w') as fe_n:
 
         news_page = 'https://www.fiaformulae.com/en/news'
@@ -48,12 +48,16 @@ def Fe_news():
 
     fe_n.close()
 
-def Fe_calendar():
-    with open('FormulaE/Calendar/races.text',"w") as FE_r:
-        page_url = 'https://www.fiaformulae.com/en/races'
+
+def FE_drivers():
+    with open('FormulaE/Standings/drivers.txt','w') as FE_d:
+
+        page_url = 'https://www.fiaformulae.com/en/standings?season=bc4a0209-f233-46c8-afce-842d1c48358f&tab=drivers&period=latest'
         request = re.get(page_url)
         soup = BeautifulSoup(request.content,'html5lib')
-        ### unfinished
+        print(soup)
 
+    FE_d.close()
 
-    FE_r.close()
+### calendar will be scraped later due to info being rendered through javascript
+

@@ -1,5 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
+import threading
 
 
 with open("F2\F2 Standings\Driver Standings.txt", 'w') as drivers:
@@ -79,6 +80,7 @@ with open("F2\F2 News\F2 News.txt", 'w') as news:
 
 news.close()
 
+## Race name in the race calendar has an issue that needs to be resolved
 with open("F2\Calender\Race Calendar.txt", 'w') as schedule:
     calendar_url = "https://www.fiaformula2.com/Calendar"
     calendar_content = requests.get(calendar_url)
@@ -116,26 +118,4 @@ with open("F2\Calender\Race Calendar.txt", 'w') as schedule:
         schedule.write(f"{station}\n")
 schedule.close()
 
-# with open("F2\Race Result\Results.txt",'w') as race_results:
-results_url = "https://www.fiaformula2.com/Results?raceid=1050"
-results_content = requests.get(results_url)
-soup = BeautifulSoup(results_content.content, "html5lib")
-
-card_class = soup.find_all("div", class_="collapsible is-open")
-card_list = []
-
-basic_results_class = soup.find_all("div", class_="driver-name-wrapper")
-basic_results_list = []
-for normal_results in basic_results_class:
-    basic_results_list.append(normal_results.text)
-# print(basic_results_list) #Need to learn how to add spaces and index it
-
-time_driver_class = soup.find_all("div", class_="score-wrapper")
-time_driver_list = []
-for timings in time_driver_class:
-    # Gives all the output including time space gap etc
-    time_driver_list.append(timings.text)
-# print(time_driver_list) #Need to add space and index it
-allrace_ = list(zip(basic_results_list, time_driver_list))
-print(allrace_)
-# race_results.close()
+## decided race results is not required
