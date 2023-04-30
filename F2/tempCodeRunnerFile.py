@@ -1,2 +1,1 @@
-print(teamname_list)
-# print("hi")
+F2
