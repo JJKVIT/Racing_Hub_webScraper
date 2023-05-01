@@ -1,11 +1,17 @@
 import requests as re
-from datetime import date,datetime
+from datetime import datetime,timedelta
 from bs4 import BeautifulSoup
 import json
 import pytz
 from urllib.request import urlopen
 import threading
 import time
+
+lon_lat_url = 'http://ipinfo.io/json'
+data = str(json.load(urlopen(lon_lat_url))['loc'])
+request_data = data.split(",")
+response = re.get(f"https://timeapi.io/api/Time/current/coordinate?latitude={request_data[0]}&longitude={request_data[1]}")
+user_timezone = response.json()['timeZone']
 
 def FE_news():
     with open("FormulaE/News/news.txt",'w') as fe_n:
@@ -48,7 +54,6 @@ def FE_news():
 
     fe_n.close()
 
-
 def FE_drivers():
     with open('FormulaE/Standings/drivers.txt','w') as FE_d:
 
@@ -80,8 +85,9 @@ def FE_teams():
     FE_t.close()
 
 def FE_calendar():
-    with open('FormulaE/Calendar/calendar','w') as FE_c:
+    with open('FormulaE/Calendar/calendar.txt','w') as FE_c:
 
+        event_list = []
         page_url = 'https://api.formula-e.pulselive.com/formula-e/v1/races?championshipId=bc4a0209-f233-46c8-afce-842d1c48358f'
         request = re.get(page_url).json()['races']
         count = 0
@@ -90,10 +96,60 @@ def FE_calendar():
             race_round = race['sequence']
             race_date = race['date']
             race_finished = race['hasRaceResults']
+            race_id = race['id']
+            race_country = race['country'].lower()
+            race_flag = f"https://static-files.formula-e.pulselive.com/flags/{race_country}.svg"
             if count==0 and race_finished == False:
                 count+= 1
-                race_schedule_url = ''
+                race_schedule_url = f"https://api.formula-e.pulselive.com/formula-e/v1/races/{race_id}/sessions?groupQualifyings=true&onlyActualEvents=true"
+                race_request = re.get(race_schedule_url).json()['sessions']
+                offset_gmt = race_request[0]['offsetGMT']
+                for event in race_request:
+                    event_name = event['sessionName']
+                    event_date = event['sessionDate']
+                    offset_gmt_hrs = int(offset_gmt.split(':')[0])
+                    offset_gmt_mins = int(offset_gmt.split(':')[1])
+                    time_change = timedelta(hours = offset_gmt_hrs,minutes = offset_gmt_mins)
+                    event_start = f"{event['startTime']}:00"
+                    event_end = f"{event['finishTime']}:00"
 
-            print(race_finished)
+                    event_start_datetime_object = (datetime.strptime(f"{event_date} {event_start}", '%Y-%m-%d %H:%M:%S'))-time_change
+                    event_end_datetime_object = (datetime.strptime(f"{event_date} {event_end}", '%Y-%m-%d %H:%M:%S'))-time_change
+
+                    current_timezone = pytz.timezone('UTC')
+                    target_timezone = pytz.timezone(f"{user_timezone}")
+                    localized_time_start = current_timezone.localize(event_start_datetime_object)
+                    datetime_user_start = localized_time_start.astimezone(target_timezone)
+                    start_time = str(datetime_user_start.replace(tzinfo=None))
+
+                    localized_time_end = current_timezone.localize(event_end_datetime_object)
+                    datetime_user_end = localized_time_end.astimezone(target_timezone)
+                    end_time = str(datetime_user_end.replace(tzinfo=None))
+
+                    timing_list = [start_time,end_time]
+                    event_list.append([event_name,timing_list])
+                FE_c.write(f"{race_finished},{race_round},{race_name},{event_list},{race_flag}\n")
+                continue
+            FE_c.write(f"{race_finished},{race_round},{race_name},{race_date},{race_flag}\n")
 
     FE_c.close()
+
+def run_FE_multi():
+    # attempting multithreading to increase speed
+    t1 = threading.Thread(target=FE_news, name='t1')
+    t2 = threading.Thread(target=FE_drivers, name='t2')
+    t3 = threading.Thread(target=FE_teams, name='t3')
+    t4 = threading.Thread(target=FE_calendar, name='t4')
+
+    #starting threads
+    t1.start()
+    t2.start()
+    t3.start()
+    t4.start()
+
+    #joining threads to make sure all tasks are finished
+    t1.join()
+    t2.join()
+    t3.join()
+    t4.join()
+
