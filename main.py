@@ -6,4 +6,4 @@ window.geometry("300x100")'''
 
 from FormulaE import FE_Data
 
-FE_Data.FE_drivers()
+FE_Data.FE_calendar()

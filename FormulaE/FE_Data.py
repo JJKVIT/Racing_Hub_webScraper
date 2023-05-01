@@ -52,12 +52,48 @@ def FE_news():
 def FE_drivers():
     with open('FormulaE/Standings/drivers.txt','w') as FE_d:
 
-        page_url = 'https://www.fiaformulae.com/en/standings?season=bc4a0209-f233-46c8-afce-842d1c48358f&tab=drivers&period=latest'
-        request = re.get(page_url)
-        soup = BeautifulSoup(request.content,'html5lib')
-        print(soup)
+        ## json package containing
+        page_url = 'https://api.formula-e.pulselive.com/formula-e/v1/standings/drivers?championshipId=bc4a0209-f233-46c8-afce-842d1c48358f&lastNRaces=4'
+        request = re.get(page_url).json()
+        for driver in request:
+            driver_name = f"{driver['driverFirstName']} {driver['driverLastName']}"
+            pos = driver['driverPosition']
+            points = driver['driverPoints']
+            team_id = driver['driverTeamId']
+            team_pic = f"https://static-files.formula-e.pulselive.com/badges/{team_id}.svg"
+            FE_d.write(f"{pos},{driver_name},{points},{team_pic}\n")
 
     FE_d.close()
 
-### calendar will be scraped later due to info being rendered through javascript
+def FE_teams():
+    with open('FormulaE/Standings/teams.txt','w') as FE_t:
+        page_url = "https://api.formula-e.pulselive.com/formula-e/v1/standings/teams?championshipId=bc4a0209-f233-46c8-afce-842d1c48358f&lastNRaces=4"
+        request = re.get(page_url).json()
+        for team in request:
+            team_name = team['teamName']
+            team_pos = team['teamPosition']
+            team_points = team['teamPoints']
+            team_id = team['teamId']
+            team_pic = f"https://static-files.formula-e.pulselive.com/badges/{team_id}.svg"
+            FE_t.write(f"{team_pos},{team_name},{team_points},{team_pic}\n")
 
+    FE_t.close()
+
+def FE_calendar():
+    with open('FormulaE/Calendar/calendar','w') as FE_c:
+
+        page_url = 'https://api.formula-e.pulselive.com/formula-e/v1/races?championshipId=bc4a0209-f233-46c8-afce-842d1c48358f'
+        request = re.get(page_url).json()['races']
+        count = 0
+        for race in request:
+            race_name = race['city']
+            race_round = race['sequence']
+            race_date = race['date']
+            race_finished = race['hasRaceResults']
+            if count==0 and race_finished == False:
+                count+= 1
+                race_schedule_url = ''
+
+            print(race_finished)
+
+    FE_c.close()

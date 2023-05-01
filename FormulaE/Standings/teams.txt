@@ -1,0 +1,11 @@
+1,TAG Heuer Porsche Formula E Team,168,https://static-files.formula-e.pulselive.com/badges/feb6762c-ae66-4c8e-a892-f958d6f7e774.svg
+2,Envision Racing,153,https://static-files.formula-e.pulselive.com/badges/c63aedad-a141-4ebc-9794-41a37909ef0c.svg
+3,Jaguar TCS Racing,138,https://static-files.formula-e.pulselive.com/badges/05dab754-2899-411b-9c4e-72311a36cc9c.svg
+4,DS Penske,107,https://static-files.formula-e.pulselive.com/badges/e05ede6d-d065-497b-a298-85afeeeb2ab1.svg
+5,Avalanche Andretti Formula E,103,https://static-files.formula-e.pulselive.com/badges/7be26d55-b77f-437a-a2ab-cf9f7e31e227.svg
+6,NEOM McLaren Formula E Team,72,https://static-files.formula-e.pulselive.com/badges/0176f3e2-1247-494d-9a8d-b0950437ee8f.svg
+7,Maserati MSG Racing,29,https://static-files.formula-e.pulselive.com/badges/19821c93-f115-41fb-af4f-80831a91afef.svg
+8,Mahindra Racing,27,https://static-files.formula-e.pulselive.com/badges/fa97d2e7-02ca-4983-a930-4fdaa245a852.svg
+9,NIO 333 Racing,20,https://static-files.formula-e.pulselive.com/badges/95ef8ea2-df90-4606-8e94-43492359f61c.svg
+10,Nissan Formula E Team,18,https://static-files.formula-e.pulselive.com/badges/6c04a435-8357-42f6-8360-5305d00050ee.svg
+11,ABT CUPRA Formula E Team,5,https://static-files.formula-e.pulselive.com/badges/c57e46c4-8163-44f6-9c0d-b74579d51000.svg
