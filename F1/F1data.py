@@ -27,9 +27,9 @@ standing_teams = f"https://www.formula1.com/en/results.html/{years}/team.html"
 # seperating the html code of the base url to title and pictures
 
 def landingpage():
-    with open("F1/Landing page/Card 1/list 1.txt","w") as c1:
-        with open("F1/Landing page/Card 2/list 2.txt","w") as c2:
-            with open("F1/Landing page/Card 3/list 3.txt","w") as c3:
+    with open("F1/Landing page/Card 1/list 1.txt","w",encoding="utf-8") as c1:
+        with open("F1/Landing page/Card 2/list 2.txt","w",encoding="utf-8") as c2:
+            with open("F1/Landing page/Card 3/list 3.txt","w",encoding="utf-8") as c3:
                 Card_1_list = []
 
 
@@ -95,13 +95,12 @@ def landingpage():
 
 def race_calendar():
     # complcations in scapring hero event completion at last
-    with open("F1/Race Calender/Races.txt","w") as R_C:
+    with open("F1/Race Calender/Races.txt","w",encoding="utf-8") as R_C:
 
         page2 = re.get(calendar_url)
         soup = BeautifulSoup(page2.content,'html5lib')
 
         race_cards = soup.find_all('div',class_ ="col-12 col-sm-6 col-lg-4 col-xl-3")
-        round_complete = False
         hero_race_script = str(soup.find_all('script')[0])
         hero_race_json = hero_race_script[35:len(hero_race_script)-10]
         json_data = json.loads(hero_race_json)
@@ -159,7 +158,7 @@ def race_calendar():
     R_C.close()
 
 def driver_standings():
-    with open("F1/Standings/drivers.txt","w") as drivers_standings:
+    with open("F1/Standings/drivers.txt","w",encoding="utf-8") as drivers_standings:
         page3 = re.get(standing_drivers)
         soup = BeautifulSoup(page3.content,'html5lib')
 
@@ -190,7 +189,7 @@ def driver_standings():
     drivers_standings.close()
 
 def team_standings():
-    with open('F1/Standings/team.txt','w') as team:
+    with open('F1/Standings/team.txt','w',encoding="utf-8") as team:
         page4 = re.get(standing_teams)
         soup = BeautifulSoup(page4.content,'html5lib')
 

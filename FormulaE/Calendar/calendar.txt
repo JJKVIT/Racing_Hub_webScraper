@@ -6,8 +6,8 @@ True,5,Cape Town,2023-02-25,https://static-files.formula-e.pulselive.com/flags/z
 True,6,Sao Paulo,2023-03-25,https://static-files.formula-e.pulselive.com/flags/br.svg
 True,7,Berlin,2023-04-22,https://static-files.formula-e.pulselive.com/flags/de.svg
 True,8,Berlin,2023-04-23,https://static-files.formula-e.pulselive.com/flags/de.svg
-False,9,Monaco,[['Free Practice 1', ['2023-05-06 10:55:00', '2023-05-06 11:45:00']], ['Free Practice 2', ['2023-05-06 12:35:00', '2023-05-06 13:25:00']], ['QUALIFYING', ['2023-05-06 14:10:00', '2023-05-06 15:25:00']], ['Race', ['2023-05-06 18:33:00', '2023-05-06 20:00:00']]],https://static-files.formula-e.pulselive.com/flags/mc.svg
-False,10,Jakarta,2023-06-03,https://static-files.formula-e.pulselive.com/flags/id.svg
+True,9,Monaco,2023-05-06,https://static-files.formula-e.pulselive.com/flags/mc.svg
+False,10,Jakarta,[['Free Practice 1', ['2023-06-02 13:55:00', '2023-06-02 14:45:00']], ['Free Practice 2', ['2023-06-03 06:35:00', '2023-06-03 07:25:00']], ['QUALIFYING', ['2023-06-03 09:10:00', '2023-06-03 10:25:00']], ['Race', ['2023-06-03 13:33:00', '2023-06-03 15:00:00']]],https://static-files.formula-e.pulselive.com/flags/id.svg
 False,11,Jakarta,2023-06-04,https://static-files.formula-e.pulselive.com/flags/id.svg
 False,12,Portland,2023-06-24,https://static-files.formula-e.pulselive.com/flags/us.svg
 False,13,Rome,2023-07-15,https://static-files.formula-e.pulselive.com/flags/it.svg

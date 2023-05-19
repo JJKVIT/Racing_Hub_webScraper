@@ -18,7 +18,7 @@ user_timezone = response.json()['timeZone']
 
 def indy_news():
     # include IndyCar/ after completion to the file path
-    with open("IndyCar/News/news.txt","w") as nw:
+    with open("IndyCar/News/news.txt","w",encoding="utf-8") as nw:
         news_url = 'https://www.indycar.com/News'
         page_news = re.get(news_url)
         soup = BeautifulSoup(page_news.content,'html5lib')
@@ -31,7 +31,7 @@ def indy_news():
     nw.close()
 
 def indy_driver_standings():
-    with open("IndyCar/Standings/drivers.txt", "w") as dw:
+    with open("IndyCar/Standings/drivers.txt", "w",encoding="utf-8") as dw:
         drivers_url = 'https://www.indycar.com/Drivers'
         drivers_page = re.get(drivers_url)
         soup = BeautifulSoup(drivers_page.content, 'html5lib')
@@ -46,7 +46,7 @@ def indy_driver_standings():
     dw.close()
 
 def indy_calendar():
-    with open("IndyCar/Calendar/race_schedule.txt","w") as rs:
+    with open("IndyCar/Calendar/race_schedule.txt","w",encoding="utf-8") as rs:
         schedule_url = 'https://www.indycar.com/Schedule'
         schedule_page = re.get(schedule_url)
         soup = BeautifulSoup(schedule_page.content,'html5lib')

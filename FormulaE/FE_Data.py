@@ -14,7 +14,7 @@ response = re.get(f"https://timeapi.io/api/Time/current/coordinate?latitude={req
 user_timezone = response.json()['timeZone']
 
 def FE_news():
-    with open("FormulaE/News/news.txt",'w') as fe_n:
+    with open("FormulaE/News/news.txt",'w',encoding="utf-8") as fe_n:
 
         news_page = 'https://www.fiaformulae.com/en/news'
         request = re.get(news_page)
@@ -55,7 +55,7 @@ def FE_news():
     fe_n.close()
 
 def FE_drivers():
-    with open('FormulaE/Standings/drivers.txt','w') as FE_d:
+    with open('FormulaE/Standings/drivers.txt','w',encoding="utf-8") as FE_d:
 
         ## json package containing
         page_url = 'https://api.formula-e.pulselive.com/formula-e/v1/standings/drivers?championshipId=bc4a0209-f233-46c8-afce-842d1c48358f&lastNRaces=4'
@@ -71,7 +71,7 @@ def FE_drivers():
     FE_d.close()
 
 def FE_teams():
-    with open('FormulaE/Standings/teams.txt','w') as FE_t:
+    with open('FormulaE/Standings/teams.txt','w',encoding="utf-8") as FE_t:
         page_url = "https://api.formula-e.pulselive.com/formula-e/v1/standings/teams?championshipId=bc4a0209-f233-46c8-afce-842d1c48358f&lastNRaces=4"
         request = re.get(page_url).json()
         for team in request:
@@ -85,7 +85,7 @@ def FE_teams():
     FE_t.close()
 
 def FE_calendar():
-    with open('FormulaE/Calendar/calendar.txt','w') as FE_c:
+    with open('FormulaE/Calendar/calendar.txt','w',encoding="utf-8") as FE_c:
 
         event_list = []
         page_url = 'https://api.formula-e.pulselive.com/formula-e/v1/races?championshipId=bc4a0209-f233-46c8-afce-842d1c48358f'
@@ -133,7 +133,7 @@ def FE_calendar():
             FE_c.write(f"{race_finished},{race_round},{race_name},{race_date},{race_flag}\n")
 
     FE_c.close()
-
+    
 def run_FE_multi():
     # attempting multithreading to increase speed
     t1 = threading.Thread(target=FE_news, name='t1')

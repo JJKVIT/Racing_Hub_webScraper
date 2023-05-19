@@ -1,23 +1,23 @@
-1,Pascal Wehrlein,100,https://static-files.formula-e.pulselive.com/badges/feb6762c-ae66-4c8e-a892-f958d6f7e774.svg
-2,Nick Cassidy,96,https://static-files.formula-e.pulselive.com/badges/c63aedad-a141-4ebc-9794-41a37909ef0c.svg
-3,Jean-Éric Vergne,81,https://static-files.formula-e.pulselive.com/badges/e05ede6d-d065-497b-a298-85afeeeb2ab1.svg
-4,Jake Dennis,80,https://static-files.formula-e.pulselive.com/badges/7be26d55-b77f-437a-a2ab-cf9f7e31e227.svg
-5,Mitch Evans,76,https://static-files.formula-e.pulselive.com/badges/05dab754-2899-411b-9c4e-72311a36cc9c.svg
-6,António Félix Da Costa,68,https://static-files.formula-e.pulselive.com/badges/feb6762c-ae66-4c8e-a892-f958d6f7e774.svg
+1,Nick Cassidy,121,https://static-files.formula-e.pulselive.com/badges/c63aedad-a141-4ebc-9794-41a37909ef0c.svg
+2,Pascal Wehrlein,101,https://static-files.formula-e.pulselive.com/badges/feb6762c-ae66-4c8e-a892-f958d6f7e774.svg
+3,Jake Dennis,96,https://static-files.formula-e.pulselive.com/badges/7be26d55-b77f-437a-a2ab-cf9f7e31e227.svg
+4,Mitch Evans,94,https://static-files.formula-e.pulselive.com/badges/05dab754-2899-411b-9c4e-72311a36cc9c.svg
+5,Jean-Ã‰ric Vergne,87,https://static-files.formula-e.pulselive.com/badges/e05ede6d-d065-497b-a298-85afeeeb2ab1.svg
+6,AntÃ³nio FÃ©lix Da Costa,68,https://static-files.formula-e.pulselive.com/badges/feb6762c-ae66-4c8e-a892-f958d6f7e774.svg
 7,Sam Bird,62,https://static-files.formula-e.pulselive.com/badges/05dab754-2899-411b-9c4e-72311a36cc9c.svg
-8,Sébastien Buemi,57,https://static-files.formula-e.pulselive.com/badges/c63aedad-a141-4ebc-9794-41a37909ef0c.svg
-9,René Rast,40,https://static-files.formula-e.pulselive.com/badges/0176f3e2-1247-494d-9a8d-b0950437ee8f.svg
-10,Jake Hughes,32,https://static-files.formula-e.pulselive.com/badges/0176f3e2-1247-494d-9a8d-b0950437ee8f.svg
-11,Stoffel Vandoorne,26,https://static-files.formula-e.pulselive.com/badges/e05ede6d-d065-497b-a298-85afeeeb2ab1.svg
-12,Maximilian Günther,24,https://static-files.formula-e.pulselive.com/badges/19821c93-f115-41fb-af4f-80831a91afef.svg
-13,André Lotterer,23,https://static-files.formula-e.pulselive.com/badges/7be26d55-b77f-437a-a2ab-cf9f7e31e227.svg
-14,Lucas Di Grassi,18,https://static-files.formula-e.pulselive.com/badges/fa97d2e7-02ca-4983-a930-4fdaa245a852.svg
-15,Norman Nato,11,https://static-files.formula-e.pulselive.com/badges/6c04a435-8357-42f6-8360-5305d00050ee.svg
-16,Sérgio Sette Câmara,10,https://static-files.formula-e.pulselive.com/badges/95ef8ea2-df90-4606-8e94-43492359f61c.svg
-17,Dan Ticktum,10,https://static-files.formula-e.pulselive.com/badges/95ef8ea2-df90-4606-8e94-43492359f61c.svg
-18,Oliver Rowland,9,https://static-files.formula-e.pulselive.com/badges/fa97d2e7-02ca-4983-a930-4fdaa245a852.svg
-19,Sacha Fenestraz,7,https://static-files.formula-e.pulselive.com/badges/6c04a435-8357-42f6-8360-5305d00050ee.svg
+8,SÃ©bastien Buemi,61,https://static-files.formula-e.pulselive.com/badges/c63aedad-a141-4ebc-9794-41a37909ef0c.svg
+9,Jake Hughes,45,https://static-files.formula-e.pulselive.com/badges/0176f3e2-1247-494d-9a8d-b0950437ee8f.svg
+10,RenÃ© Rast,40,https://static-files.formula-e.pulselive.com/badges/0176f3e2-1247-494d-9a8d-b0950437ee8f.svg
+11,Stoffel Vandoorne,28,https://static-files.formula-e.pulselive.com/badges/e05ede6d-d065-497b-a298-85afeeeb2ab1.svg
+12,Maximilian GÃ¼nther,24,https://static-files.formula-e.pulselive.com/badges/19821c93-f115-41fb-af4f-80831a91afef.svg
+13,AndrÃ© Lotterer,23,https://static-files.formula-e.pulselive.com/badges/7be26d55-b77f-437a-a2ab-cf9f7e31e227.svg
+14,Sacha Fenestraz,19,https://static-files.formula-e.pulselive.com/badges/6c04a435-8357-42f6-8360-5305d00050ee.svg
+15,Lucas Di Grassi,18,https://static-files.formula-e.pulselive.com/badges/fa97d2e7-02ca-4983-a930-4fdaa245a852.svg
+16,Dan Ticktum,18,https://static-files.formula-e.pulselive.com/badges/95ef8ea2-df90-4606-8e94-43492359f61c.svg
+17,Norman Nato,11,https://static-files.formula-e.pulselive.com/badges/6c04a435-8357-42f6-8360-5305d00050ee.svg
+18,SÃ©rgio Sette CÃ¢mara,10,https://static-files.formula-e.pulselive.com/badges/95ef8ea2-df90-4606-8e94-43492359f61c.svg
+19,Oliver Rowland,9,https://static-files.formula-e.pulselive.com/badges/fa97d2e7-02ca-4983-a930-4fdaa245a852.svg
 20,Edoardo Mortara,5,https://static-files.formula-e.pulselive.com/badges/19821c93-f115-41fb-af4f-80831a91afef.svg
 21,Robin Frijns,3,https://static-files.formula-e.pulselive.com/badges/c57e46c4-8163-44f6-9c0d-b74579d51000.svg
-22,Nico Müller,2,https://static-files.formula-e.pulselive.com/badges/c57e46c4-8163-44f6-9c0d-b74579d51000.svg
+22,Nico MÃ¼ller,2,https://static-files.formula-e.pulselive.com/badges/c57e46c4-8163-44f6-9c0d-b74579d51000.svg
 23,Kelvin Van der Linde,0,https://static-files.formula-e.pulselive.com/badges/c57e46c4-8163-44f6-9c0d-b74579d51000.svg
