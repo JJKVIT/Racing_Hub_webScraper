@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 import threading
 
 
-with open("F2\F2 Standings\Driver Standings.txt", 'w') as drivers:
+with open("Racing_Hub\F2\F2 Standings\Driver Standings.txt", 'w') as drivers:
     stand_url = "https://www.fiaformula2.com/Standings/Driver"
     content_web = requests.get(stand_url)
     soup = BeautifulSoup(content_web.content, 'html.parser')
@@ -30,7 +30,7 @@ with open("F2\F2 Standings\Driver Standings.txt", 'w') as drivers:
 drivers.close()
 
 
-with open("F2\F2 Standings\Team Standings.txt", 'w') as team:
+with open("Racing_Hub\F2\F2 Standings\Team Standings.txt", 'w') as team:
     team_url = "https://www.fiaformula2.com/Standings/Team?seasonId=180"
     team_content = requests.get(team_url)
     soup = BeautifulSoup(team_content.content, 'html.parser')
@@ -57,7 +57,7 @@ with open("F2\F2 Standings\Team Standings.txt", 'w') as team:
 team.close()
 
 
-with open("F2\F2 News\F2 News.txt", 'w') as news:
+with open("Racing_Hub\F2\F2 News\F2 News.txt", 'w') as news:
     news_url = "https://www.fiaformula2.com/Latest"
     news_content = requests.get(news_url)
     soup = BeautifulSoup(news_content.content, 'html5lib')
@@ -80,14 +80,11 @@ with open("F2\F2 News\F2 News.txt", 'w') as news:
 
 news.close()
 
-## Race name in the race calendar has an issue that needs to be resolved
-with open("F2\Calender\Race Calendar.txt", 'w') as schedule:
+
+with open("Racing_Hub\F2\Calender\Race Calendar.txt", 'w') as schedule:
     calendar_url = "https://www.fiaformula2.com/Calendar"
     calendar_content = requests.get(calendar_url)
     soup = BeautifulSoup(calendar_content.content, "html5lib")
-
-    calendar_box = soup.find_all("div", class_="container wrapper card-post")
-    calendar_box_list = []
 
     date_start = soup.find_all("span", class_="start-date")
     date_start_list = []
@@ -101,21 +98,18 @@ with open("F2\Calender\Race Calendar.txt", 'w') as schedule:
     month_ = soup.find_all("span", class_="month")
     month_list = []
 
-    for box in calendar_box:
-        for start in date_start:
-            for end in date_end:
-                for destination in location:
-                    for month_date in month_:
-                        month_list.append(month_date.text)
-                    location_list.append(destination.text)
-                date_end_list.append(end.text)
-            date_start_list.append(start.text)
-        calendar_box_list.append(box)
+    for start in date_start:
+        for end in date_end:
+            for destination in location:
+                for month_date in month_:
+                    month_list.append(month_date.text)
+                location_list.append(destination.text)
+            date_end_list.append(end.text)
+        date_start_list.append(start.text)
     basic_info_list = list(
         zip(date_start_list, date_end_list, month_list, location_list))
 
     for station in basic_info_list:
         schedule.write(f"{station}\n")
-schedule.close()
 
-## decided race results is not required
+schedule.close()
