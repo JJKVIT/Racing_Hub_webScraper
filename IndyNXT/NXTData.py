@@ -17,22 +17,25 @@ response = re.get(f"https://timeapi.io/api/Time/current/coordinate?latitude={req
 user_timezone = response.json()['timeZone']
 
 def indy_news():
-    with open("IndyNXT/News/news.txt","w",encoding="utf-8") as nw:
+    with open("IndyNXT/News/news.json","w",encoding="utf-8") as nw:
         news_url = 'https://www.indycar.com/INDYNXT/News'
         page_news = re.get(news_url)
+        out_dict = {}
         soup = BeautifulSoup(page_news.content,'html5lib')
         news_card = soup.find_all('li', class_ = 'media-grid-module__media-item')
         for num,card in enumerate(news_card):
             title = (card.find(class_ = 'media-grid-module__secondary-heading').text).replace("\n","").rstrip(" ").lstrip(" ")
             pic = card.find('img')['src']
-            nw.write(f"{title},{pic}\n")
+            out_dict[num] = {"title": title,"pic": pic}
             if num == 14:break
+        nw.write(json.dumps(out_dict,ensure_ascii=False))
     nw.close()
 
 def indy_driver_standings():
-    with open("IndyNXT/Standings/drivers.txt", "w",encoding="utf-8") as dw:
+    with open("IndyNXT/Standings/drivers.json", "w",encoding="utf-8") as dw:
         drivers_url = 'https://www.indycar.com/INDYNXT/Drivers'
         drivers_page = re.get(drivers_url)
+        out_dict = {}
         soup = BeautifulSoup(drivers_page.content, 'html5lib')
         driver_card = soup.find_all('div',class_ = 'driver-listing__driver-profile')
         for rank,card in enumerate(driver_card,1):
@@ -40,17 +43,18 @@ def indy_driver_standings():
             name = card.find(class_ = 'secondary-heading').text.replace("\n","").lstrip(" ").rstrip(" ").replace("                                \xa0"," ")
             team = card.find(class_ = 'tertiary-heading').text.replace("\n"," ").lstrip(" ").rstrip(" ")
             points = card.find_all("span",class_ = 'number')[1].text
-            dw.write(f"{rank},{name},{points},{pic},{team}\n")
-
+            out_dict[rank] = {"rank":rank,"name":name,"point":points,"pic":pic,"team":team}
+        dw.write(json.dumps(out_dict,ensure_ascii=False))
     dw.close()
 
 def indy_calendar():
-    with open("IndyNXT/Calendar/race_schedule.txt","w",encoding="utf-8") as rs:
+    with open("IndyNXT/Calendar/race_schedule.json","w",encoding="utf-8") as rs:
         schedule_url = 'https://www.indycar.com/INDYNXT/Schedule'
         schedule_page = re.get(schedule_url)
+        out_dict = {}
         soup = BeautifulSoup(schedule_page.content,'html5lib')
         race_card = soup.find_all('li',class_ = 'schedule-list__item')
-        for card in race_card:
+        for num,card in enumerate(race_card):
             race_finished = "Upcoming"
             pic = [pics["src"] for num,pics in enumerate(card.find_all('img')) if num<2]
             winner_name_card = card.find(class_ = 'schedule-list__race-winner')
@@ -59,7 +63,7 @@ def indy_calendar():
                 winner_flag = card.find(class_ = 'schedule-list__race-winner-flag')['src']
                 pic.append(winner_flag)
                 race_finished = "Finished"
-                rs.write(f"{race_finished},{winner_name},{pic}\n")
+                out_dict[num] = {"status":race_finished,"winner":winner_name,"pic":pic}
                 continue
             except:
                 month_list = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
@@ -86,7 +90,8 @@ def indy_calendar():
                 time_date = str(datetime_user.replace(tzinfo=None))
                 brodcasters_card = card.find(class_ = 'schedule-list__broadcast-logos')
                 brodcasters = [card['src'] for card in brodcasters_card.find_all("img")]
-                rs.write(f"{race_finished},{race_name},{time_date},{brodcasters}\n")
+                out_dict[num] = {"status":race_finished,"name":race_name,"time":time_date,"brod":brodcasters}
+        rs.write(json.dumps(out_dict,ensure_ascii=False))
     rs.close()
 
 def run_NXT_multi():
