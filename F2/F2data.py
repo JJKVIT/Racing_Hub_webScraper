@@ -120,10 +120,10 @@ def f2_schedule_():
 # Threading
 
     def f2thread():
-        t1 = threading.Thread(target=f2_drivers_, name=t1)
-        t2 = threading.Thread(target=f2_team_, name=t2)
-        t3 = threading.Thread(target=f2_news_, name=t3)
-        t4 = threading.Thread(target=f2_schedule_, name=t4)
+        t1 = threading.Thread(target=f2_drivers_, name='t1')
+        t2 = threading.Thread(target=f2_team_, name='t2')
+        t3 = threading.Thread(target=f2_news_, name='t3')
+        t4 = threading.Thread(target=f2_schedule_, name='t4')
 # Start of threading
 
         t1.start()
