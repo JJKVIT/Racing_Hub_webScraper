@@ -4,7 +4,7 @@ import threading
 
 
 def f2_drivers_():
-    with open("Racing_Hub\F2\F2 Standings\Driver Standings.txt", 'w', encoding="utf-8") as drivers:
+    with open("F2\F2 Standings\Driver Standings.txt", 'w', encoding="utf-8") as drivers:
         stand_url = "https://www.fiaformula2.com/Standings/Driver"
         content_web = requests.get(stand_url)
         soup = BeautifulSoup(content_web.content, 'html.parser')
@@ -32,7 +32,7 @@ def f2_drivers_():
 
 
 def f2_team_():
-    with open("Racing_Hub\F2\F2 Standings\Team Standings.txt", 'w', encoding="utf-8") as team:
+    with open("F2\F2 Standings\Team Standings.txt", 'w', encoding="utf-8") as team:
         team_url = "https://www.fiaformula2.com/Standings/Team?seasonId=180"
         team_content = requests.get(team_url)
         soup = BeautifulSoup(team_content.content, 'html.parser')
@@ -60,7 +60,7 @@ def f2_team_():
 
 
 def f2_news_():
-    with open("Racing_Hub\F2\F2 News\F2 News.txt", 'w', encoding="utf-8") as news:
+    with open("F2\F2 News\F2 News.txt", 'w', encoding="utf-8") as news:
         news_url = "https://www.fiaformula2.com/Latest"
         news_content = requests.get(news_url)
         soup = BeautifulSoup(news_content.content, 'html5lib')
@@ -85,7 +85,7 @@ def f2_news_():
 
 
 def f2_schedule_():
-    with open("Racing_Hub\F2\Calender\Race Calendar.txt", 'w', encoding="utf-8") as schedule:
+    with open("F2\Calender\Race Calendar.txt", 'w', encoding="utf-8") as schedule:
         calendar_url = "https://www.fiaformula2.com/Calendar"
         calendar_content = requests.get(calendar_url)
         soup = BeautifulSoup(calendar_content.content, "html5lib")
