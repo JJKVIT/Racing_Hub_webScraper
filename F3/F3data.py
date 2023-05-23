@@ -128,18 +128,20 @@ def _f3dates_():
 
     f3calendar.close()
 
+# Threading
+
 
 def f3_thread():
     t1 = threading.Thread(target=_f3dates_, name=t1)
     t2 = threading.Thread(target=f3_news_, name=t2)
     t3 = threading.Thread(target=f3_Drivernames_standings, name=t3)
     t4 = threading.Thread(target=f3_teamstandings_, name=t4)
-
+# Start of threading
     t1.start()
     t2.start()
     t3.start()
     t4.start()
-
+# Join threading
     t1.join()
     t2.join()
     t3.join()
