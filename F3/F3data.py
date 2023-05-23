@@ -128,7 +128,7 @@ def _f3dates_():
 
     f3calendar.close()
 
-# Threading
+# Started Threading for efficient running
 
 
 def f3_thread():
