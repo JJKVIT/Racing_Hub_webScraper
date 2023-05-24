@@ -5,7 +5,7 @@ import json
 
 
 def f2_drivers_():
-    with open("Racing_Hub\F2\F2 Standings\DriverStandings.json", 'w', encoding="utf-8") as drivers:
+    with open("Racing_Hub\F2\F2 Standings\Driver Standings.txt", 'w', encoding="utf-8") as drivers:
         stand_url = "https://www.fiaformula2.com/Standings/Driver"
         content_web = requests.get(stand_url)
         soup = BeautifulSoup(content_web.content, 'html.parser')
@@ -28,7 +28,7 @@ f2_drivers_()
 
 
 def f2_team_():
-    with open("Racing_Hub\F2\F2 Standings\TeamStandings.json", 'w', encoding="utf-8") as team:
+    with open("Racing_Hub\F2\F2 Standings\Team Standings.txt", 'w', encoding="utf-8") as team:
         team_url = "https://www.fiaformula2.com/Standings/Team?seasonId=180"
         team_content = requests.get(team_url)
         soup = BeautifulSoup(team_content.content, 'html.parser')
@@ -51,7 +51,7 @@ f2_team_()
 
 
 def f2_news_():
-    with open("Racing_Hub\F2\F2 News\F2News.json", 'w', encoding="utf-8") as news:
+    with open("Racing_Hub\F2\F2 News\F2 News.txt", 'w', encoding="utf-8") as news:
         news_url = "https://www.fiaformula2.com/Latest"
         news_content = requests.get(news_url)
         soup = BeautifulSoup(news_content.content, 'html5lib')
@@ -76,7 +76,7 @@ f2_news_()
 
 
 def f2_schedule_():
-    with open("Racing_Hub\F2\Calender\RaceCalendar.json", 'w', encoding="utf-8") as schedule:
+    with open("Racing_Hub\F2\Calender\Race Calendar.txt", 'w', encoding="utf-8") as schedule:
         calendar_url = "https://www.fiaformula2.com/Calendar"
         calendar_content = requests.get(calendar_url)
         soup = BeautifulSoup(calendar_content.content, "html5lib")
@@ -120,12 +120,11 @@ f2_schedule_()
 
 # Threading
 
-
-def f2thread():
-    t1 = threading.Thread(target=f2_drivers_, name=t1)
-    t2 = threading.Thread(target=f2_team_, name=t2)
-    t3 = threading.Thread(target=f2_news_, name=t3)
-    t4 = threading.Thread(target=f2_schedule_, name=t4)
+    def f2thread():
+        t1 = threading.Thread(target=f2_drivers_, name=t1)
+        t2 = threading.Thread(target=f2_team_, name=t2)
+        t3 = threading.Thread(target=f2_news_, name=t3)
+        t4 = threading.Thread(target=f2_schedule_, name=t4)
 # Start of threading
 
     t1.start()

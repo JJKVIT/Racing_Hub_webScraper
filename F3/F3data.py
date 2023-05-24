@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 
 
 def f3_news_():
-    with open("Racing_Hub\\F3\\F3 News\\News.txt", 'w', encoding="utf-8") as f3news:
+    with open("F3\F3 News\\News.txt", 'w', encoding="utf-8") as f3news:
         news_url = "https://www.fiaformula3.com/Latest"
         news_content = requests.get(news_url)
         soup = BeautifulSoup(news_content.content, "html5lib")
@@ -27,7 +27,7 @@ def f3_news_():
 
 
 def f3_Drivernames_standings():
-    with open("Racing_Hub\F3\Standings\Team Standings.txt", 'w', encoding="utf-8") as f3drivers:
+    with open("F3\Standings\Team Standings.txt", 'w', encoding="utf-8") as f3drivers:
         driverstand_url = "https://www.fiaformula3.com/Standings/Driver?seasonId=180"
         driverstand_content = requests.get(driverstand_url)
         soup = BeautifulSoup(driverstand_content.content, "html5lib")
@@ -55,7 +55,7 @@ def f3_Drivernames_standings():
 
 
 def f3_teamstandings_():
-    with open("Racing_Hub\F3\Standings\Team Standings.txt", 'w', encoding="utf-8") as f3team:
+    with open("F3\Standings\Team Standings.txt", 'w', encoding="utf-8") as f3team:
         teamstand_url = "https://www.fiaformula3.com/Standings/Team?seasonId=180"
         teamstand_content = requests.get(teamstand_url)
         soup = BeautifulSoup(teamstand_content.content, "html5lib")
@@ -85,7 +85,7 @@ def f3_teamstandings_():
 
 
 def _f3dates_():
-    with open("Racing_Hub\F3\Calendar\F3 Calendar.txt", 'w', encoding="utf-8") as f3calendar:
+    with open("F3\Calendar\F3 Calendar.txt", 'w', encoding="utf-8") as f3calendar:
         calendar_url = "https://www.fiaformula3.com/Calendar"
         calendar_content = requests.get(calendar_url)
         soup = BeautifulSoup(calendar_content.content, "html5lib")
@@ -132,10 +132,10 @@ def _f3dates_():
 
 
 def f3_thread():
-    t1 = threading.Thread(target=_f3dates_, name=t1)
-    t2 = threading.Thread(target=f3_news_, name=t2)
-    t3 = threading.Thread(target=f3_Drivernames_standings, name=t3)
-    t4 = threading.Thread(target=f3_teamstandings_, name=t4)
+    t1 = threading.Thread(target=_f3dates_, name="t1")
+    t2 = threading.Thread(target=f3_news_, name="t2")
+    t3 = threading.Thread(target=f3_Drivernames_standings, name='t3')
+    t4 = threading.Thread(target=f3_teamstandings_, name="t4")
 # Start of threading
     t1.start()
     t2.start()
