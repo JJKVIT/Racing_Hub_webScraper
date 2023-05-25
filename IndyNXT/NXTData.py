@@ -26,7 +26,7 @@ def indy_news():
         for num,card in enumerate(news_card):
             title = (card.find(class_ = 'media-grid-module__secondary-heading').text).replace("\n","").rstrip(" ").lstrip(" ")
             pic = card.find('img')['src']
-            out_dict[num] = {"title": title,"pic": pic}
+            out_dict[num+1] = {"title": title,"pic": pic}
             if num == 14:break
         nw.write(json.dumps(out_dict,ensure_ascii=False))
     nw.close()
@@ -63,7 +63,7 @@ def indy_calendar():
                 winner_flag = card.find(class_ = 'schedule-list__race-winner-flag')['src']
                 pic.append(winner_flag)
                 race_finished = "Finished"
-                out_dict[num] = {"status":race_finished,"winner":winner_name,"pic":pic}
+                out_dict[num+1] = {"status":race_finished,"winner":winner_name,"pic":pic}
                 continue
             except:
                 month_list = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
@@ -90,7 +90,7 @@ def indy_calendar():
                 time_date = str(datetime_user.replace(tzinfo=None))
                 brodcasters_card = card.find(class_ = 'schedule-list__broadcast-logos')
                 brodcasters = [card['src'] for card in brodcasters_card.find_all("img")]
-                out_dict[num] = {"status":race_finished,"name":race_name,"time":time_date,"brod":brodcasters}
+                out_dict[num+1] = {"status":race_finished,"name":race_name,"time":time_date,"brod":brodcasters}
         rs.write(json.dumps(out_dict,ensure_ascii=False))
     rs.close()
 
