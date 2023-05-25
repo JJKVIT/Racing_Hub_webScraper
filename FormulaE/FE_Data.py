@@ -38,13 +38,13 @@ def FE_news():
         analysis_titles = [title.text for title in news_cards[1].find_all('h2',class_ = 'news-item__title')]
         analysis_pics = [pic['src'] for pic in news_cards[1].find_all('img')]
         analysis_news = list(zip(analysis_titles,analysis_pics))
-        for i,part in enumerate(analysis_news,i):
+        for i,part in enumerate(analysis_news,i+1):
             out_dict[str(i)] = {"title": part[0], "pic": part[1]}
 
         race_report_titles = [title.text for title in news_cards[2].find_all('h2',class_ = 'news-item__title')]
         race_report_pics = [pic['src'] for pic in news_cards[2].find_all('img')]
         race_report_news = list(zip(race_report_titles,race_report_pics))
-        for i,part in enumerate(race_report_news,i):
+        for i,part in enumerate(race_report_news,i+1):
             out_dict[str(i)] = {"title": part[0], "pic": part[1]}
 
         ev_tech_titles = [title.text for title in news_cards[3].find_all('h2',class_ = 'news-item__title')]
@@ -134,9 +134,9 @@ def FE_calendar():
 
                     timing_list = [start_time,end_time]
                     event_list.append([event_name,timing_list])
-                out_dict[loc] = {"status": race_finished,"round": race_round,"name": race_name,"time": event_list,"pic": race_flag}
+                out_dict[loc+1] = {"status": race_finished,"round": race_round,"name": race_name,"time": event_list,"pic": race_flag}
                 continue
-            out_dict[loc] = {"status": race_finished,"round": race_round,"name": race_name,"time": race_date,"pic": race_flag}
+            out_dict[loc+1] = {"status": race_finished,"round": race_round,"name": race_name,"time": race_date,"pic": race_flag}
             json_dict = json.dumps(out_dict,ensure_ascii=False)
         FE_c.write(json_dict)
     FE_c.close()

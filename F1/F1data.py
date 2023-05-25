@@ -50,14 +50,14 @@ def landingpage():
                 main_title_card = Card_1.find(class_ ="col-lg-6 left-col")
                 main_title_pic = main_title_card.find(class_ = "lazy")['data-src']
                 main_title = main_title_card.find(class_ = "f1--title" ).text
-                c1_dict["0"] = {"title":main_title,"pic":main_title_pic}
+                c1_dict["1"] = {"title":main_title,"pic":main_title_pic}
 
                 # rest of card 1 articles
                 side_articles_card = Card_1.find(class_ ="col-lg-6 right-col")
                 side_articles_list = side_articles_card.find_all('div',class_ = "col-6")
 
                 # seperating the pictures and titles and adding to the Card 1 list
-                for num,article in enumerate(side_articles_list,1):
+                for num,article in enumerate(side_articles_list,2):
                     title = article.find(class_ = 'f1--s no-margin').text
                     pic = article.find(class_ = 'lazy')['data-src']
                     c1_dict[str(num)] = {"title":title,"pic":pic}
@@ -71,7 +71,7 @@ def landingpage():
                 #first part contains videos in a loop which will not be used
                 card_2_articles = card_2_parts[1].find_all('div',class_ = 'col-md-6 col-sm-12')
 
-                for num,article in enumerate(card_2_articles):
+                for num,article in enumerate(card_2_articles,1):
                     title = article.find(class_ = 'no-margin').text
                     # some articles don't have pictures
                     try:
@@ -87,7 +87,7 @@ def landingpage():
 
                 #Card 3 Articles
                 card_3_articles = Card_3.find_all('div',class_ = 'f1-latest-listing--grid-item col-md-6 col-xl-3')
-                for num,article in enumerate(card_3_articles):
+                for num,article in enumerate(card_3_articles,1):
                     title = article.find(class_ = 'no-margin').text
                     pic = article.find(class_ = 'lazy')['data-src']
                     c3_dict[str(num)] = {"title": title,"pic": pic}
@@ -185,7 +185,7 @@ def driver_standings():
             templist.append(char)
             if (x+1)%3 == 0:
                 standing.append(templist)
-                out_dict[str(i)] = {"pos":templist[0].text,"name":templist[1].text,"team":team_list[i],"point": templist[2].text}
+                out_dict[str(i+1)] = {"name": name_list[i],"country":templist[1].text,"team":team_list[i],"point": templist[2].text}
                 templist = []
                 x = 0
                 i += 1
@@ -206,7 +206,7 @@ def team_standings():
         out_dict = {}
         team_point_pairing = dict(zip(team_name_list,point_list))
         for i,team in enumerate(team_name_list):
-            out_dict[str(i)] = {"team": team,"point": team_point_pairing[team]}
+            out_dict[str(i+1)] = {"team": team,"point": team_point_pairing[team]}
         teams.write(json.dumps(out_dict,ensure_ascii=False))
     teams.close()
 
