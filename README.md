@@ -1,7 +1,7 @@
 # Racing_Hub
 Python web scraper for racing different racing series 
 
-Go to the replit user and open file for latest code as the json writing has been removed there and firebase hass been added
+Go to the replit user and open file for latest code as the json writing has been removed there and firebase has been added and flask webpage was made
 
 https://race-hub.gamingfailure.repl.co/ -- json for all the scraped data
 the site info is updated every 1 hr
