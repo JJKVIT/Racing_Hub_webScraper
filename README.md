@@ -1,4 +1,4 @@
-# Racing Hub Web Scraper (project on HOLD)
+# Racing Hub Web Scraper (project on HOLD due to api hosting issues)
 ### Python web scraper for racing different racing series 
 
 Go to the replit user and open file for latest code as the json writing has been removed there and firebase has been added and flask webpage was made
